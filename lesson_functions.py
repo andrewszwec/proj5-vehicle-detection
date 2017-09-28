@@ -3,6 +3,36 @@ import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 from skimage.feature import hog
+
+class carDetector():
+    def __init__(self):
+        self.cnt = 0
+        self.labels = []
+        self.heatmap = np.zeros_like([0,0,0]).astype(np.float)
+    
+    def getCounter(self):
+        return self.cnt
+    
+    def updateCounter(self):
+        self.cnt += 1
+    
+    def getCounterMod(self, m):
+        return self.cnt % m
+    
+    def setLabels(self, lbls):
+        self.labels = lbls
+        
+    def getLabels(self):
+        return self.labels
+
+    def setHeatmap(self, hmap):
+        # Stores the last heatmap
+        self.heatmap = hmap
+   
+    def getHeatmap(self):
+        # gets the last heatmap
+        return self.heatmap 
+
 # Define a function to return HOG features and visualization
 def get_hog_features(img, orient, pix_per_cell, cell_per_block, 
                         vis=False, feature_vec=True):
