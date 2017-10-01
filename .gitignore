@@ -4,3 +4,4 @@ __pycache__
 lecture_images
 train_img
 *.p
+/data
