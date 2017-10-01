@@ -3,3 +3,4 @@ __pycache__
 .ipynb_checkpoints
 lecture_images
 train_img
+*.p
